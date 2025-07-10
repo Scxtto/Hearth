@@ -1,0 +1,98 @@
+.session-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem 0.5rem 4rem 0.5rem;
+  background: #191919;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.session-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.session-dotdotdot {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-left: 0.5rem;
+}
+.session-finish-btn {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 1.6em;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.session-content {
+  margin-top: 0.5rem;
+}
+.exercise-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #ececec;
+}
+.exercise-header {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #2176ff;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+}
+.sets-table {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  border-collapse: collapse;
+}
+.sets-table th,
+.sets-table td {
+  text-align: center;
+  padding: 0.4em;
+}
+.sets-table th {
+  font-size: 0.98em;
+  font-weight: 500;
+  color: #555;
+}
+.sets-table td {
+  font-size: 1.03em;
+}
+.set-prev {
+  color: #b4b4b4;
+  font-weight: 500;
+}
+.set-input {
+  background: #f7f8fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 60px;
+  padding: 0.2em 0.5em;
+  text-align: center;
+}
+.set-complete {
+  color: #38c172;
+  font-size: 1.3em;
+}
+.add-set-btn {
+  background: #ececec;
+  color: #2176ff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.55em 1.2em;
+  margin-top: 0.2em;
+  cursor: pointer;
+}
+.add-set-btn:hover {
+  background: #dde7fb;
+}

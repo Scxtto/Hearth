@@ -12,15 +12,27 @@ services:
     ports:
       - "5432:5432"
 
+  migrate:
+    image: migrate/migrate
+    depends_on:
+      - db
+    volumes:
+      - ./backend/migrations:/migrations
+    entrypoint: [ "migrate",
+      "-path", "/migrations",
+      "-database", "postgres://hearth_user:supersecretpassword@db:5432/hearth?sslmode=disable",
+      "up" ]
+
   backend:
     build: ./backend
     depends_on:
       - db
+      - migrate
     environment:
       DATABASE_URL: postgres://hearth_user:supersecretpassword@db:5432/hearth?sslmode=disable
     ports:
       - "8080:8080"
-    # Uncomment if you want live reload in development:
+    # Uncomment for live reload in development:
     # volumes:
     #   - ./backend:/app
 
@@ -28,11 +40,19 @@ services:
     build: ./frontend
     depends_on:
       - backend
+    environment:
+    - VITE_API_BASE_URL=http://localhost:8080/api
     ports:
       - "3000:80"
     # Uncomment for hot reload in development:
     # volumes:
     #   - ./frontend:/app
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    ports:
+      - "6379:6379"
 
 volumes:
   pgdata:

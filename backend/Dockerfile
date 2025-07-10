@@ -1,10 +1,10 @@
-# Use the official Go image for building
+# Build stage
 FROM golang:1.24.5-alpine as builder
 WORKDIR /app
 COPY . .
-RUN go build -o hearth-backend
+RUN go build -o hearth-backend ./cmd/server
 
-# Use a minimal image for running
+# Runtime stage
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/hearth-backend .
